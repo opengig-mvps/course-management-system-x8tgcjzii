@@ -1,0 +1,90 @@
+{
+  "items": [
+    {
+      "url": "/page.tsx",
+      "type": "page",
+      "status": "success",
+      "access": "public",
+      "userType": "all"
+    },
+    {
+      "url": "/api/courses",
+      "type": "api",
+      "status": "success",
+      "method": "POST"
+    },
+    {
+      "url": "/api/users/{userId}/courses",
+      "type": "api",
+      "status": "success",
+      "method": "GET"
+    },
+    {
+      "url": "/api/courses/{courseId}/enroll",
+      "type": "api",
+      "status": "success",
+      "method": "POST"
+    },
+    {
+      "url": "/api/payments/stripe/webhook",
+      "type": "api",
+      "status": "success",
+      "method": "POST"
+    },
+    {
+      "url": "/api/users/{userId}/enrollments",
+      "type": "api",
+      "status": "success",
+      "method": "GET"
+    },
+    {
+      "url": "dashboard/tutor/courses/create/page.tsx",
+      "type": "page",
+      "status": "success",
+      "userType": "tutor",
+      "access": "private"
+    },
+    {
+      "url": "dashboard/tutor/courses/page.tsx",
+      "type": "page",
+      "status": "success",
+      "userType": "tutor",
+      "access": "private"
+    },
+    {
+      "url": "dashboard/student/courses/page.tsx",
+      "type": "page",
+      "status": "success",
+      "userType": "student",
+      "access": "public"
+    },
+    {
+      "url": "dashboard/student/courses/enroll/page.tsx",
+      "type": "page",
+      "status": "success",
+      "userType": "student",
+      "access": "private"
+    },
+    {
+      "url": "dashboard/student/courses/enrolled/page.tsx",
+      "type": "page",
+      "status": "success",
+      "userType": "student",
+      "access": "private"
+    },
+    {
+      "url": "/(auth)/register/page.tsx",
+      "type": "page",
+      "status": "success",
+      "access": "public",
+      "userType": "all"
+    },
+    {
+      "url": "/(auth)/login/page.tsx",
+      "type": "page",
+      "status": "success",
+      "access": "public",
+      "userType": "all"
+    }
+  ]
+}

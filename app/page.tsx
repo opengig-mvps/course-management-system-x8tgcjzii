@@ -1,215 +1,181 @@
-"use client";
+'use client' ;
+
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
-import {
-  Mail,
-  User,
-  BookOpen,
-  VideoIcon,
-  DollarSign,
-  ArrowRight,
-} from "lucide-react";
-import Image from "next/image";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Check, DollarSign, LineChart, Users } from "lucide-react";
 
 const LandingPage = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-[100vh]">
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl">
-                    Revolutionize Your Learning Experience
-                  </h1>
-                  <p className="max-w-xl md:text-xl">
-                    Our platform brings tutors and students together for an
-                    interactive and immersive educational journey.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2 sm:flex-row">
-                  <Button className="bg-white text-blue-600 hover:bg-gray-200">
-                    Get Started
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="text-white border-white hover:bg-white hover:text-blue-600"
-                  >
-                    Learn More
-                  </Button>
-                </div>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-green-400 to-blue-500 text-white text-center">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center space-y-6">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl">
+                Welcome to EduLearn
+              </h1>
+              <p className="max-w-2xl text-lg md:text-xl">
+                A platform where students and tutors connect for an enhanced learning experience.
+              </p>
+              <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                <Button className="bg-white text-black hover:bg-gray-200">Get Started</Button>
+                <Button variant="outline" className="text-white hover:bg-white hover:text-black">Learn More</Button>
               </div>
-              <Image
-                src="https://picsum.photos/seed/picsum/200/300"
-                alt="Learning"
-                width={400}
-                height={600}
-                className="mx-auto w-full rounded-xl lg:order-last"
-              />
             </div>
           </div>
         </section>
-
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Core Features
-              </h2>
-              <p className="max-w-xl md:text-lg">
-                Explore the powerful features designed to enhance the
-                educational experience for both tutors and students.
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center space-y-6 text-center">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Features</h2>
+              <p className="max-w-2xl text-muted-foreground md:text-lg">
+                Discover the amazing features that make EduLearn the best choice for online education.
               </p>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 py-12">
-              <Card>
-                <CardHeader>
-                  <User className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>User Authentication</CardTitle>
-                  <CardDescription>
-                    Email and Password Login/Signup
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    Secure accounts for students and tutors with essential login
-                    and signup capabilities.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <BookOpen className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>Course Management</CardTitle>
-                  <CardDescription>Create and View Courses</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    Tutors can create and manage their courses with flexible
-                    scheduling and detailed descriptions.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <VideoIcon className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>Zoom Link Access</CardTitle>
-                  <CardDescription>Controlled Access</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    Secure Zoom access ensures only enrolled students can join
-                    the class sessions.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <DollarSign className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>Payment Processing</CardTitle>
-                  <CardDescription>Secure Transactions</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    Integrated payment solutions ensure seamless and secure
-                    transactions for course enrollments.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <User className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>Student Dashboard</CardTitle>
-                  <CardDescription>Enrolled Courses Overview</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    A personalized dashboard for students to monitor and access
-                    their enrolled courses easily.
-                  </p>
-                </CardContent>
-              </Card>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+                <Card className="p-6">
+                  <CardHeader>
+                    <Users className="h-12 w-12 mx-auto" />
+                    <CardTitle>Student & Tutor</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p>Seamlessly connect students and tutors for an enhanced learning experience.</p>
+                  </CardContent>
+                </Card>
+                <Card className="p-6">
+                  <CardHeader>
+                    <DollarSign className="h-12 w-12 mx-auto" />
+                    <CardTitle>Easy Payments</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p>Secure and easy payment options for enrolling in courses.</p>
+                  </CardContent>
+                </Card>
+                <Card className="p-6">
+                  <CardHeader>
+                    <LineChart className="h-12 w-12 mx-auto" />
+                    <CardTitle>Course Management</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p>Tutors can easily create and manage their courses with detailed information.</p>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
-
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Frequently Asked Questions
-              </h2>
-              <p className="max-w-xl md:text-lg">
-                Find answers to common questions and learn more about our
-                platform’s capabilities.
+          <div className="container px-4 md:px-6">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Testimonials</h2>
+              <p className="max-w-2xl mx-auto text-muted-foreground md:text-lg">
+                See what our users are saying about EduLearn.
               </p>
             </div>
-            <div className="mx-auto max-w-3xl py-12">
-              <Accordion type="single" collapsible>
-                <AccordionItem value="item-1">
-                  <AccordionTrigger>
-                    How do I sign up as a tutor?
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    Tutors can sign up using their email and password and start
-                    creating courses immediately.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2">
-                  <AccordionTrigger>
-                    How can students enroll in courses?
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    Students can browse available courses and enroll by
-                    proceeding to the payment page.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-3">
-                  <AccordionTrigger>
-                    What payment methods are supported?
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    We support various payment methods to ensure a smooth
-                    enrollment experience for all users.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 mt-12">
+              <Card className="p-6">
+                <div className="flex items-center gap-4">
+                  <Avatar>
+                    <AvatarImage src="https://placehold.co/600x400.png" />
+                    <AvatarFallback>JD</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <p className="text-sm font-medium leading-none">John Doe</p>
+                    <p className="text-xs text-muted-foreground">Student</p>
+                  </div>
+                </div>
+                <p className="mt-4 text-muted-foreground">
+                  "EduLearn has transformed my learning experience. The tutors are amazing and the platform is very user-friendly."
+                </p>
+              </Card>
+              <Card className="p-6">
+                <div className="flex items-center gap-4">
+                  <Avatar>
+                    <AvatarImage src="https://placehold.co/600x400.png" />
+                    <AvatarFallback>SM</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <p className="text-sm font-medium leading-none">Sarah Miller</p>
+                    <p className="text-xs text-muted-foreground">Tutor</p>
+                  </div>
+                </div>
+                <p className="mt-4 text-muted-foreground">
+                  "As a tutor, EduLearn has provided me with the tools I need to effectively manage my courses and connect with students."
+                </p>
+              </Card>
+              <Card className="p-6">
+                <div className="flex items-center gap-4">
+                  <Avatar>
+                    <AvatarImage src="https://placehold.co/600x400.png" />
+                    <AvatarFallback>MJ</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <p className="text-sm font-medium leading-none">Michael Johnson</p>
+                    <p className="text-xs text-muted-foreground">Student</p>
+                  </div>
+                </div>
+                <p className="mt-4 text-muted-foreground">
+                  "The payment process is smooth and the course content is top-notch. Highly recommend EduLearn!"
+                </p>
+              </Card>
             </div>
           </div>
         </section>
-
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Join Us Today
-              </h2>
-              <p className="max-w-xl md:text-lg">
-                Begin your journey with our innovative learning management
-                platform. Sign up now and explore endless learning
-                possibilities!
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Sign Up</h2>
+              <p className="max-w-2xl mx-auto text-muted-foreground md:text-lg">
+                Join EduLearn today and start your journey towards a better learning experience.
               </p>
-              <Button className="bg-blue-600 text-white hover:bg-blue-700 px-6 py-3 text-lg">
-                Sign Up Now
-              </Button>
+            </div>
+            <div className="max-w-md mx-auto mt-12">
+              <form className="grid grid-cols-1 gap-6">
+                <div>
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" type="email" placeholder="Your email address" />
+                </div>
+                <div>
+                  <Label htmlFor="password">Password</Label>
+                  <Input id="password" type="password" placeholder="Your password" />
+                </div>
+                <Button type="submit" className="w-full">Sign Up</Button>
+              </form>
             </div>
           </div>
         </section>
       </main>
+      <footer className="bg-gray-800 text-white p-6">
+        <div className="container max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+          <div className="grid gap-1">
+            <h3 className="font-semibold">Product</h3>
+            <a href="#">Features</a>
+            <a href="#">Pricing</a>
+            <a href="#">Security</a>
+          </div>
+          <div className="grid gap-1">
+            <h3 className="font-semibold">Company</h3>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+          </div>
+          <div className="grid gap-1">
+            <h3 className="font-semibold">Resources</h3>
+            <a href="#">Documentation</a>
+            <a href="#">Help Center</a>
+            <a href="#">Community</a>
+            <a href="#">Templates</a>
+          </div>
+          <div className="grid gap-1">
+            <h3 className="font-semibold">Legal</h3>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
